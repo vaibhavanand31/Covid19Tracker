@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="108dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".25"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Confirmed"></TextView>
+
+            <TextView
+                android:id="@+id/confirmedTodayText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+32,111"></TextView>
+
+            <TextView
+                android:id="@+id/confirmedTotalText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="97,35,975"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".25"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Active"></TextView>
+
+            <TextView
+                android:id="@+id/activeTodayText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""></TextView>
+
+            <TextView
+                android:id="@+id/activeTotalText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3,77,336"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".25"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Recovered"></TextView>
+
+            <TextView
+                android:id="@+id/recoveredTodayText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+36,561"></TextView>
+
+            <TextView
+                android:id="@+id/recoveredTotalText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="92,14,897"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".25"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Deceased"></TextView>
+
+            <TextView
+                android:id="@+id/deceasedTodayText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+402"></TextView>
+
+            <TextView
+                android:id="@+id/deceasedTotalText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1,41,398"></TextView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
