@@ -1,6 +1,5 @@
 package com.example.covid19tracker.network
 
-import com.example.covid19tracker.network.models.Summary
 import com.example.covid19tracker.network.models.SummaryListWrapper
 import retrofit2.http.GET
 

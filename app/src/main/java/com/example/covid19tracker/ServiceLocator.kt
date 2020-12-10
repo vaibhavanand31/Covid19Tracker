@@ -2,6 +2,7 @@ package com.example.covid19tracker
 
 import android.content.Context
 import androidx.room.Room
+import com.example.covid19tracker.database.CovidDatabase
 import com.example.covid19tracker.network.ApiService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -20,5 +21,11 @@ class ServiceLocator(applicationContext: Context) {
         .build()
 
     val apiService = retrofit.create(ApiService::class.java)
+
+    val database = Room.databaseBuilder(
+        applicationContext,
+        CovidDatabase::class.java,
+        "dog_database"
+    ).fallbackToDestructiveMigration().build()
 
 }

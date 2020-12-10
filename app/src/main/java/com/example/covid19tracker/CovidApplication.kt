@@ -10,6 +10,6 @@ class CovidApplication: Application() {
     override fun onCreate() {
         super.onCreate()
         serviceLocator = ServiceLocator(applicationContext)
-        Stetho.initializeWithDefaults(this)
+        //Stetho.initializeWithDefaults(this)
     }
 }
