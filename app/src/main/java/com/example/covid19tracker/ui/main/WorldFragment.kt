@@ -41,6 +41,15 @@ class WorldFragment : Fragment() {
 
     private fun printGlobalSummary(global: Global){
 
+        Log.d("qq",global.totalConfirmed.toString())
+        Log.d("qq",global.totalDeaths.toString())
+        Log.d("qq",global.totalRecovered.toString())
+        Log.d("qq",global.newConfirmed.toString())
+        Log.d("qq",global.newDeaths.toString())
+        Log.d("qq",global.newRecovered.toString())
+       
+
+
         confirmedTotalText.setText(Integer.toString(global.totalConfirmed))
         deceasedTotalText.setText(Integer.toString(global.totalDeaths))
         recoveredTotalText.setText(Integer.toString(global.totalRecovered))

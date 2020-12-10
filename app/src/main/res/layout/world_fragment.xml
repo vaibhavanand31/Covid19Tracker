@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/grey900"
     >
 
     <LinearLayout
@@ -25,24 +25,30 @@
             android:layout_height="wrap_content"
             android:layout_weight=".25"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:padding="2dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Confirmed"></TextView>
+                android:text="@string/confirmedTxt"
+                android:theme="@style/labelText"/>
 
             <TextView
                 android:id="@+id/confirmedTodayText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="+32,111"></TextView>
+                android:theme="@style/keyText"
+                android:textColor="@color/redA700"
+                android:textSize="16sp"
+                />
 
             <TextView
                 android:id="@+id/confirmedTotalText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="97,35,975"></TextView>
+                android:theme="@style/keyText"
+                android:textColor="@color/red700"
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -50,24 +56,29 @@
             android:layout_height="match_parent"
             android:layout_weight=".25"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:padding="2dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Active"></TextView>
+                android:text="Active"
+                android:theme="@style/labelText"
+                android:textColor="@color/purpleA700"/>
 
             <TextView
                 android:id="@+id/activeTodayText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=""></TextView>
+                android:theme="@style/keyText"
+                android:textColor="@color/purpleA700"
+                android:textSize="16sp"/>
 
             <TextView
                 android:id="@+id/activeTotalText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="3,77,336"></TextView>
+                android:theme="@style/keyText"
+                android:textColor="@color/purple900"/>
         </LinearLayout>
 
         <LinearLayout
@@ -75,24 +86,29 @@
             android:layout_height="match_parent"
             android:layout_weight=".25"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:padding="2dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Recovered"></TextView>
+                android:text="Recovered"
+                android:theme="@style/labelText"
+                android:textColor="@color/greenA700"/>
 
             <TextView
                 android:id="@+id/recoveredTodayText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="+36,561"></TextView>
+                android:theme="@style/keyText"
+                android:textColor="@color/greenA700"
+                android:textSize="16sp"/>
 
             <TextView
                 android:id="@+id/recoveredTotalText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="92,14,897"></TextView>
+                android:theme="@style/keyText"
+                android:textColor="@color/green900"/>
         </LinearLayout>
 
         <LinearLayout
@@ -100,24 +116,29 @@
             android:layout_height="match_parent"
             android:layout_weight=".25"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:padding="2dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Deceased"></TextView>
+                android:text="Deceased"
+                android:theme="@style/labelText"
+                android:textColor="@color/grey300"/>
 
             <TextView
                 android:id="@+id/deceasedTodayText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="+402"></TextView>
+                android:theme="@style/keyText"
+                android:textColor="@color/grey300"
+                android:textSize="16sp"/>
 
             <TextView
                 android:id="@+id/deceasedTotalText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1,41,398"></TextView>
+                android:theme="@style/keyText"
+                android:textColor="@color/grey500"/>
         </LinearLayout>
 
     </LinearLayout>
