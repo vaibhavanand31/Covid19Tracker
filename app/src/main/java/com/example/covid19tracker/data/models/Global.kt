@@ -13,7 +13,7 @@ data class Global(
     val totalRecovered: Int = 0
 ): Serializable {
 
-    fun toLocalGlobalInfo(): LocalGlobalInfo = LocalGlobalInfo(
-        id, newConfirmed, totalConfirmed, newDeaths, totalDeaths, newRecovered, totalRecovered
-    )
+//    fun toLocalGlobalInfo(): LocalGlobalInfo = LocalGlobalInfo(
+//        id, newConfirmed, totalConfirmed, newDeaths, totalDeaths, newRecovered, totalRecovered
+//    )
 }

@@ -1,11 +1,12 @@
 package com.example.covid19tracker.network
 
 import com.example.covid19tracker.network.models.SummaryListWrapper
+import retrofit2.Response
 import retrofit2.http.GET
 
 interface ApiService {
 
-    @GET("summary/")
-    suspend fun getSummary(): SummaryListWrapper
+    @GET("summary")
+    suspend fun getSummary(): Response<SummaryListWrapper>
 
 }

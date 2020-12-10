@@ -17,16 +17,16 @@ data class LocalGlobalInfo (
     val totalRecovered: Int
 ) {
     companion object {
-        fun fromWeb(webGlobalInfo: WebGlobalInfo): LocalGlobalInfo {
-            return LocalGlobalInfo(
-                newConfirmed = webGlobalInfo.newConfirmed,
-                totalConfirmed = webGlobalInfo.totalConfirmed,
-                newDeaths = webGlobalInfo.newDeaths,
-                totalDeaths = webGlobalInfo.totalDeaths,
-                newRecovered = webGlobalInfo.newRecovered,
-                totalRecovered = webGlobalInfo.totalRecovered
-            )
-        }
+//        fun fromWeb(webGlobalInfo: WebGlobalInfo): LocalGlobalInfo {
+//            return LocalGlobalInfo(
+//                newConfirmed = webGlobalInfo.newConfirmed,
+//                totalConfirmed = webGlobalInfo.totalConfirmed,
+//                newDeaths = webGlobalInfo.newDeaths,
+//                totalDeaths = webGlobalInfo.totalDeaths,
+//                newRecovered = webGlobalInfo.newRecovered,
+//                totalRecovered = webGlobalInfo.totalRecovered
+//            )
+//        }
     }
 
     fun toDomainGlobalInfo(): Global {

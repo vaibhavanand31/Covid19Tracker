@@ -30,7 +30,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/confirmedTxt"
+                android:text="@string/confirmed"
                 android:theme="@style/labelText"/>
 
             <TextView
@@ -61,7 +61,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Active"
+                android:text="@string/active"
                 android:theme="@style/labelText"
                 android:textColor="@color/purpleA700"/>
 
@@ -91,7 +91,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Recovered"
+                android:text="@string/recovered"
                 android:theme="@style/labelText"
                 android:textColor="@color/greenA700"/>
 
@@ -121,7 +121,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Deceased"
+                android:text="@string/deceased"
                 android:theme="@style/labelText"
                 android:textColor="@color/grey300"/>
 
