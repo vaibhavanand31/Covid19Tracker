@@ -1,5 +1,6 @@
 package com.example.covid19tracker.data
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
@@ -36,13 +37,20 @@ class SummaryRepository(
 
     suspend fun getSummary() {
         try {
-            val countries = apiService.getSummary().countries
-            val global = apiService.getSummary().global
-            withContext(Dispatchers.IO) {
-                database.getCovidDao().insertCountriesData(countries.map {
-                    it.toLocalCountryInfo()
-                })
-                database.getCovidDao().insertGlobalData(global.toLocalWebGlobalInfo())
+            val response = apiService.getSummary()
+            if (response.isSuccessful) {
+                val summary = response.body()
+                withContext(Dispatchers.IO) {
+                    if (summary != null) {
+                        database.getCovidDao().insertGlobalData(summary.global.toLocalWebGlobalInfo())
+                        database.getCovidDao().insertCountriesData(summary.countries.map {
+                            it.toLocalCountryInfo()
+                        })
+                    }
+                    else {
+                        Log.w("in else", "empty summary")
+                    }
+                }
             }
         } catch (e: HttpException) {
             //For Http request related failures

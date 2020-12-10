@@ -8,8 +8,6 @@ import java.io.Serializable
 
 @JsonClass(generateAdapter = true)
 class SummaryListWrapper(
-    @Json(name = "Message")
-    val message: String,
     @Json(name = "Global")
     val global: WebGlobalInfo,
     @Json(name = "Countries")

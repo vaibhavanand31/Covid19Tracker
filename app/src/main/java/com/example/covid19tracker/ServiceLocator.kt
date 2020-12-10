@@ -11,12 +11,14 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 
 class ServiceLocator(applicationContext: Context) {
 
+    private val SERVER_URL = "https://api.covid19api.com/"
+
     private val moshi = Moshi.Builder()
         .add(KotlinJsonAdapterFactory())
         .build()
 
     private val retrofit = Retrofit.Builder()
-        .baseUrl("https://api.covid19api.com/")
+        .baseUrl(SERVER_URL)
         .addConverterFactory(MoshiConverterFactory.create(moshi))
         .build()
 
