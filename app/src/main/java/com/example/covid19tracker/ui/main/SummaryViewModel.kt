@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.lifecycle.*
 import androidx.savedstate.SavedStateRegistryOwner
 import com.example.covid19tracker.data.SummaryRepository
+import com.example.covid19tracker.data.models.Country
 import kotlinx.coroutines.launch
 import java.lang.IllegalArgumentException
 
@@ -13,6 +14,17 @@ class SummaryViewModel (
 ): ViewModel() {
     val countriesListInfo = summaryRepository.countriesInfoList
     val globalInfo = summaryRepository.globalInfo
+
+    private val _navigateToCountryDetail = MutableLiveData<Country>(null)
+    val navigateToCountryDetail: LiveData<Country?> get() = _navigateToCountryDetail
+
+    fun onCountryClick(country: Country) {
+        _navigateToCountryDetail.value = country
+    }
+
+    fun onNavigateToCountryDetailsComplete() {
+        _navigateToCountryDetail.value = null
+    }
 
     init {
         viewModelScope.launch {
