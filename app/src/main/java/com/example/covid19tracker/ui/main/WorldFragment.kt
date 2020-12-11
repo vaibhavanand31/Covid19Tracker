@@ -40,7 +40,6 @@ class WorldFragment : Fragment() {
     }
 
     private fun printGlobalSummary(global: Global){
-
         confirmedTotalText.setText(Integer.toString(global.totalConfirmed))
         activeTotalText.setText(Integer.toString(global.totalConfirmed - global.totalDeaths - global.totalRecovered))
         activeTodayText.setText(Integer.toString(global.newConfirmed - global.newDeaths - global.newRecovered))

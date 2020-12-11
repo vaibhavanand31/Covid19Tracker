@@ -37,19 +37,13 @@ class SummaryRepository(
 
     suspend fun getSummary() {
         try {
-            val response = apiService.getSummary()
-            if (response.isSuccessful) {
-                val summary = response.body()
-                withContext(Dispatchers.IO) {
-                    if (summary != null) {
-                        database.getCovidDao().insertGlobalData(summary.global.toLocalWebGlobalInfo())
-                        database.getCovidDao().insertCountriesData(summary.countries.map {
-                            it.toLocalCountryInfo()
-                        })
-                    }
-                    else {
-                        Log.w("in else", "empty summary")
-                    }
+            val summary = apiService.getSummary().body()
+            withContext(Dispatchers.IO) {
+                if (summary != null) {
+                    database.getCovidDao().insertGlobalData(summary.global.toLocalWebGlobalInfo())
+                    database.getCovidDao().insertCountriesData(summary.countries.map {
+                        it.toLocalCountryInfo()
+                    })
                 }
             }
         } catch (e: HttpException) {
@@ -60,5 +54,4 @@ class SummaryRepository(
             //For all other exceptions
         }
     }
-    // save summary
 }
