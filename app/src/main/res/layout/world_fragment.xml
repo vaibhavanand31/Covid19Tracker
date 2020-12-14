@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey900"
-    >
+    android:background="@color/grey900">
 
     <TextView
         android:layout_width="wrap_content"
@@ -14,14 +13,13 @@
         android:gravity="center"
         android:text="@string/heading"
         android:textColor="@color/grey50"
-        android:textSize="26sp"
+        android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.193" />
+        app:layout_constraintVertical_bias="0.109" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -30,146 +28,134 @@
         android:gravity="center"
         android:text="@string/heading2"
         android:textColor="@color/grey50"
-        android:textSize="25sp"
+        android:textSize="27sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.267" />
+        app:layout_constraintVertical_bias="0.185" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="108dp"
-        android:orientation="horizontal"
+        android:orientation="vertical"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.673">
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight=".25"
-            android:orientation="vertical"
-            android:padding="2dp">
+            android:layout_marginBottom="13dp"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/confirmed"
-                android:theme="@style/labelText"/>
+                android:theme="@style/labelText" />
 
             <TextView
                 android:id="@+id/confirmedTodayText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:theme="@style/keyText"
                 android:textColor="@color/redA700"
-                android:textSize="16sp"
-                />
+                android:theme="@style/keyText" />
 
             <TextView
                 android:id="@+id/confirmedTotalText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:theme="@style/keyText"
                 android:textColor="@color/red700"
-                />
+                android:theme="@style/keyText" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight=".25"
-            android:orientation="vertical"
-            android:padding="2dp">
+            android:layout_marginBottom="14dp"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/active"
-                android:theme="@style/labelText"
-                android:textColor="@color/purpleA700"/>
+                android:theme="@style/labelText" />
 
             <TextView
                 android:id="@+id/activeTodayText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:theme="@style/keyText"
                 android:textColor="@color/purpleA700"
-                android:textSize="16sp"/>
+                android:textSize="20sp"
+                android:theme="@style/keyText" />
 
             <TextView
                 android:id="@+id/activeTotalText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:theme="@style/keyText"
-                android:textColor="@color/purple900"/>
+                android:textColor="@color/purple900"
+                android:theme="@style/keyText" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight=".25"
-            android:orientation="vertical"
-            android:padding="2dp">
+            android:layout_marginBottom="14dp"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/recovered"
-                android:theme="@style/labelText"
-                android:textColor="@color/greenA700"/>
+                android:theme="@style/labelText" />
 
             <TextView
                 android:id="@+id/recoveredTodayText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:theme="@style/keyText"
                 android:textColor="@color/greenA700"
-                android:textSize="16sp"/>
+                android:textSize="20sp"
+                android:theme="@style/keyText" />
 
             <TextView
                 android:id="@+id/recoveredTotalText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:theme="@style/keyText"
-                android:textColor="@color/green900"/>
+                android:textColor="@color/green900"
+                android:theme="@style/keyText" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight=".25"
-            android:orientation="vertical"
-            android:padding="2dp">
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/deceased"
-                android:theme="@style/labelText"
-                android:textColor="@color/grey300"/>
+                android:textColor="@color/grey300"
+                android:theme="@style/labelText" />
 
             <TextView
                 android:id="@+id/deceasedTodayText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:theme="@style/keyText"
                 android:textColor="@color/grey300"
-                android:textSize="16sp"/>
+                android:textSize="20sp"
+                android:theme="@style/keyText" />
 
             <TextView
                 android:id="@+id/deceasedTotalText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:theme="@style/keyText"
-                android:textColor="@color/grey500"/>
+                android:textColor="@color/grey500"
+                android:theme="@style/keyText" />
         </LinearLayout>
 
     </LinearLayout>

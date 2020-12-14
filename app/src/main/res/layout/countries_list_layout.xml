@@ -13,7 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="15dp"
-        android:paddingVertical="10dp">
+        android:paddingVertical="10dp"
+        android:background="@color/grey800">
 
         <TextView
             android:id="@+id/countryName"
@@ -27,7 +28,8 @@
             app:layout_constraintEnd_toStartOf="@+id/countryTotalConfirmedCases"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="test title" />
+            tools:text="test title"
+            android:textColor="@color/grey300"/>
 
         <TextView
             android:id="@+id/countryTotalConfirmedCases"
@@ -36,6 +38,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:text="0"
+            android:textColor="@color/grey300"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/countryTodayConfirmedCases"
             app:layout_constraintStart_toEndOf="@+id/countryName"
@@ -55,7 +58,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/countryTotalConfirmedCases"
             app:layout_constraintTop_toTopOf="parent"
-            android:paddingLeft="10dp"/>
+            android:paddingLeft="10dp"
+            android:textColor="@color/grey300"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

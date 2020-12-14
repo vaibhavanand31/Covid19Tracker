@@ -11,15 +11,19 @@
 
 
     <style name="labelText"  parent="Widget.AppCompat.TextView">
-        <item name="android:textSize">16sp</item>
-        <item name="android:textColor">@color/redA700</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/grey50</item>
+        <item name="android:gravity">center</item>
 
     </style>
 
 
     <style name="keyText"  parent="Widget.AppCompat.TextView">
-        <item name="android:textSize">17sp</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:text">@string/confirmed</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+
     </style>
 
     <style name="stats_layout" parent="Theme.AppCompat">
