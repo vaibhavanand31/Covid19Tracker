@@ -1,24 +1,30 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="fontFamily">@font/varela_round</item>
+
     </style>
 
 
     <style name="labelText"  parent="Widget.AppCompat.TextView">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/redA700</item>
-        <item name="fontFamily">@font/varela_round</item>
 
     </style>
 
 
     <style name="keyText"  parent="Widget.AppCompat.TextView">
-        <item name="android:textSize">19sp</item>
+        <item name="android:textSize">17sp</item>
         <item name="android:text">@string/confirmed</item>
-        <item name="fontFamily">@font/varela_round</item>
     </style>
+
+    <style name="stats_layout" parent="Theme.AppCompat">
+        <item name="fontFamily">@font/varela_round</item>
+        <item name="backgroundColor">@color/grey900</item>
+    </style>
+
 </resources>

@@ -1,4 +1,4 @@
-package com.example.covid19tracker.ui.main
+package com.example.covid19tracker.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,10 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.observe
 import com.example.covid19tracker.CovidApplication
 import com.example.covid19tracker.data.SummaryRepository
 import com.example.covid19tracker.data.models.Country
 import com.example.covid19tracker.databinding.CountriesFragmentBinding
+import com.example.covid19tracker.ui.detail.CountryDetail
+import com.example.covid19tracker.ui.main.SummaryViewModel
+import com.example.covid19tracker.ui.main.SummaryViewModelFactory
+import java.io.Serializable
 
 class CountriesFragment(): Fragment() {
 
@@ -18,7 +23,11 @@ class CountriesFragment(): Fragment() {
         val apiService = (requireActivity().applicationContext as CovidApplication).serviceLocator.apiService
         val database = (requireActivity().applicationContext as CovidApplication).serviceLocator.database
         val dogRepository = SummaryRepository(apiService, database)
-        SummaryViewModelFactory(dogRepository, this, arguments)
+        SummaryViewModelFactory(
+            dogRepository,
+            this,
+            arguments
+        )
     }
 
     lateinit var binding: CountriesFragmentBinding
@@ -29,11 +38,13 @@ class CountriesFragment(): Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = CountriesFragmentBinding.inflate(inflater, container, false)
-        val adapter = CountriesAdapter(object: CountryClickListner {
-            override fun onCountryClick(country: Country) {
-                viewModel.onCountryClick(country)
-            }
-        })
+        val adapter =
+            CountriesAdapter(object :
+                CountryClickListner {
+                override fun onCountryClick(country: Country) {
+                    viewModel.onCountryClick(country)
+                }
+            })
 
         binding.countriesRecyclerView.adapter = adapter
 
@@ -44,11 +55,11 @@ class CountriesFragment(): Fragment() {
 
         viewModel.navigateToCountryDetail.observe(viewLifecycleOwner){
             it?.let {
-//                val intent = Intent(activity, CountryDetailActivity::class.java).apply {
-//                    putExtra("countryInfo", it)
-//                }
-//                startActivity(intent)
-//                viewModel.onNavigateToCountryDetailsComplete()
+                val intent = Intent(activity, CountryDetail::class.java).apply {
+                    putExtra("countryInfo", it as Serializable)
+                }
+                startActivity(intent)
+                viewModel.onNavigateToCountryDetailsComplete()
             }
         }
 

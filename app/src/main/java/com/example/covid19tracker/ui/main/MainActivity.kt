@@ -11,7 +11,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        mainViewPager.adapter = MainViewPagerAdapter(this)
+        mainViewPager.adapter =
+            MainViewPagerAdapter(this)
         TabLayoutMediator(mainTabLayout, mainViewPager) { tab, position ->
             tab.setText(MainTab.values()[position].titleRes)
         }.attach()

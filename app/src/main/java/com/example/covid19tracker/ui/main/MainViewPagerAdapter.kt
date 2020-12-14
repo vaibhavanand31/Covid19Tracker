@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.covid19tracker.R
+import com.example.covid19tracker.ui.CountriesFragment
+import com.example.covid19tracker.ui.WorldFragment
 
 class MainViewPagerAdapter(fragmentActivity: FragmentActivity): FragmentStateAdapter(fragmentActivity) {
     override fun getItemCount(): Int  = MainTab.values().size

@@ -1,4 +1,4 @@
-package com.example.covid19tracker.ui.main
+package com.example.covid19tracker.ui
 
 import android.view.LayoutInflater
 import android.view.View

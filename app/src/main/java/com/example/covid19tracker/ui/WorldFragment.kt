@@ -1,19 +1,18 @@
-package com.example.covid19tracker.ui.main
+package com.example.covid19tracker.ui
 
 import android.os.Bundle
-import android.provider.Settings
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.observe
 import com.example.covid19tracker.CovidApplication
-import com.example.covid19tracker.R
 import com.example.covid19tracker.data.SummaryRepository
 import com.example.covid19tracker.data.models.Global
-import com.example.covid19tracker.database.LocalGlobalInfo
 import com.example.covid19tracker.databinding.WorldFragmentBinding
+import com.example.covid19tracker.ui.main.SummaryViewModel
+import com.example.covid19tracker.ui.main.SummaryViewModelFactory
 import kotlinx.android.synthetic.main.world_fragment.*
 
 class WorldFragment : Fragment() {
@@ -22,7 +21,11 @@ class WorldFragment : Fragment() {
         val apiService = (requireActivity().applicationContext as CovidApplication).serviceLocator.apiService
         val database = (requireActivity().applicationContext as CovidApplication).serviceLocator.database
         val dogRepository = SummaryRepository(apiService, database)
-        SummaryViewModelFactory(dogRepository, this, arguments)
+        SummaryViewModelFactory(
+            dogRepository,
+            this,
+            arguments
+        )
     }
 
     lateinit var binding: WorldFragmentBinding
