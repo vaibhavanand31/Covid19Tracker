@@ -3,26 +3,36 @@ package com.example.covid19tracker.ui
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.covid19tracker.R
 import com.example.covid19tracker.data.models.Country
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.countries_list_layout.view.*
 
-class CountriesAdapter(private val countryListner: CountryClickListner) : RecyclerView.Adapter<CountriesViewHolder>() {
+private val DIFF_CALLBACk = object: DiffUtil.ItemCallback<Country>() {
+    override fun areItemsTheSame(oldItem: Country, newItem: Country): Boolean =
+        oldItem.id == newItem.id
 
-    var countries: List<Country> = emptyList()
+    override fun areContentsTheSame(oldItem: Country, newItem: Country): Boolean =
+        oldItem == newItem
+
+}
+
+class CountriesAdapter(private val countryListner: CountryClickListner):
+    ListAdapter<Country, CountriesViewHolder>(DIFF_CALLBACk) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CountriesViewHolder =
         CountriesViewHolder.from(parent)
 
     override fun onBindViewHolder(holder: CountriesViewHolder, position: Int) =
-        holder.bind(countries[position], countryListner)
+        holder.bind(getItem(position), countryListner)
 
-    override fun getItemCount(): Int = countries.size
 }
 
-class CountriesViewHolder private constructor(override val containerView: View): RecyclerView.ViewHolder(containerView), LayoutContainer {
+class CountriesViewHolder private constructor(override val containerView: View):
+    RecyclerView.ViewHolder(containerView), LayoutContainer {
     companion object {
         fun from(parent: ViewGroup): CountriesViewHolder {
             val layout = LayoutInflater.from(parent.context)

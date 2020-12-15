@@ -49,8 +49,7 @@ class CountriesFragment(): Fragment() {
         binding.countriesRecyclerView.adapter = adapter
 
         viewModel.countriesListInfo.observe(viewLifecycleOwner){
-            adapter.countries = it
-            adapter.notifyDataSetChanged()
+            adapter.submitList(it)
         }
 
         viewModel.navigateToCountryDetail.observe(viewLifecycleOwner){
