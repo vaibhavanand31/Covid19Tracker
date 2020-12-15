@@ -14,7 +14,7 @@
         android:layout_height="48dp"
         android:background="@color/grey900"
         app:tabSelectedTextColor="@color/grey50"
-        app:tabTextColor="@color/grey900"
+        app:tabTextColor="@color/grey50"
         app:tabIndicatorFullWidth="false"
         />
 

@@ -12,7 +12,6 @@ class CountryDetail : AppCompatActivity() {
 
     private val viewModel by viewModels<CountriesDViewModel> {
 
-
         val apiService = (applicationContext as CovidApplication).serviceLocator.apiService
         val database = (applicationContext as CovidApplication).serviceLocator.database
         val repository = SummaryRepository(apiService,database)
@@ -23,11 +22,17 @@ class CountryDetail : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_country_detail)
-
+        setSupportActionBar(toolbar)
+        supportActionBar?.title = "Countries"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         setData(viewModel.countryDetail)
     }
 
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
 
     fun setData(country : Country){
 
@@ -40,7 +45,5 @@ class CountryDetail : AppCompatActivity() {
         txtTotalDeath.setText(country.totalDeaths.toString())
 
         txtTotalRecovered.setText(country.totalRecovered.toString())
-        //txt_totalcase.setText(country.totalConfirmed)
-
     }
 }
