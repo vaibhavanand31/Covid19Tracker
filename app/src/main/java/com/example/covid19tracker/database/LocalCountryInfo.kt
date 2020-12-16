@@ -9,8 +9,9 @@ import com.example.covid19tracker.network.models.WebGlobalInfo
 
 @Entity(tableName = "countries_info")
 data class LocalCountryInfo(
-    @PrimaryKey(autoGenerate = true)
-    val id: Int = 0,
+//    @PrimaryKey(autoGenerate = true)
+//    val id: Int = 0,
+    @PrimaryKey
     val country: String,
     val countryCode: String,
     val slug: String,
@@ -41,7 +42,6 @@ data class LocalCountryInfo(
 
     fun toDomainCountriesInfo(): Country {
         return Country(
-            id = id,
             country = country,
             countryCode = countryCode,
             slug = slug,

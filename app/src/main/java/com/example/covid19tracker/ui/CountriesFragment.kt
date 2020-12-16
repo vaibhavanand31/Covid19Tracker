@@ -2,13 +2,14 @@ package com.example.covid19tracker.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.SearchView
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
 import com.example.covid19tracker.CovidApplication
+import com.example.covid19tracker.R
 import com.example.covid19tracker.data.SummaryRepository
 import com.example.covid19tracker.data.models.Country
 import com.example.covid19tracker.databinding.CountriesFragmentBinding
@@ -18,6 +19,8 @@ import com.example.covid19tracker.ui.main.SummaryViewModelFactory
 import java.io.Serializable
 
 class CountriesFragment(): Fragment() {
+
+    lateinit var binding: CountriesFragmentBinding
 
     private val viewModel by viewModels<SummaryViewModel> {
         val apiService = (requireActivity().applicationContext as CovidApplication).serviceLocator.apiService
@@ -29,8 +32,6 @@ class CountriesFragment(): Fragment() {
             arguments
         )
     }
-
-    lateinit var binding: CountriesFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -48,6 +49,10 @@ class CountriesFragment(): Fragment() {
 
         binding.countriesRecyclerView.adapter = adapter
 
+        binding.searchEditText.addTextChangedListener {
+            viewModel.setSearchKey(it?.toString())
+        }
+
         viewModel.countriesListInfo.observe(viewLifecycleOwner){
             adapter.submitList(it)
         }
@@ -61,7 +66,6 @@ class CountriesFragment(): Fragment() {
                 viewModel.onNavigateToCountryDetailsComplete()
             }
         }
-
         return binding.root
     }
 }

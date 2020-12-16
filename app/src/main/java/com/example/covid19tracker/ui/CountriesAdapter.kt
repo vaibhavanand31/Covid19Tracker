@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.countries_list_layout.view.*
 
 private val DIFF_CALLBACk = object: DiffUtil.ItemCallback<Country>() {
     override fun areItemsTheSame(oldItem: Country, newItem: Country): Boolean =
-        oldItem.id == newItem.id
+        oldItem.country == newItem.country
 
     override fun areContentsTheSame(oldItem: Country, newItem: Country): Boolean =
         oldItem == newItem

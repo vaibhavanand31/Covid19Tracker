@@ -14,7 +14,7 @@ class SummaryViewModel (
     private val state: SavedStateHandle
 ): ViewModel() {
 
-    val countriesListInfo = summaryRepository.countriesInfoList
+//    val countriesListInfo = summaryRepository.countriesInfoList
     val globalInfo = summaryRepository.globalInfo
 
     private val _navigateToCountryDetail = MutableLiveData<Country>(null)
@@ -26,6 +26,20 @@ class SummaryViewModel (
 
     fun onNavigateToCountryDetailsComplete() {
         _navigateToCountryDetail.value = null
+    }
+
+    private val searchKey = MutableLiveData<String?>(null)
+    fun setSearchKey(query: String?){
+        searchKey.value = query
+    }
+
+    val countriesListInfo = searchKey.switchMap { query ->
+        summaryRepository.countriesInfoList.map { list ->
+            list.filter {
+                it.country != null && (
+                query.isNullOrEmpty() || it.country.contains(query, ignoreCase = true))
+            }
+        }
     }
 
     init {
