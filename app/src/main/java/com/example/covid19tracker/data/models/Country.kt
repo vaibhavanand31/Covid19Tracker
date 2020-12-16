@@ -4,7 +4,6 @@ import com.example.covid19tracker.database.LocalCountryInfo
 import java.io.Serializable
 
 data class Country(
-    val id: Int,
     val country: String,
     val countryCode: String,
     val slug: String,
@@ -18,6 +17,6 @@ data class Country(
 ): Serializable {
 
     fun toLocalCountriesInfo(): LocalCountryInfo = LocalCountryInfo(
-        id, country, countryCode, slug, newConfirmed, totalConfirmed, newDeaths, totalDeaths, newRecovered, totalRecovered, date
+       country, countryCode, slug, newConfirmed, totalConfirmed, newDeaths, totalDeaths, newRecovered, totalRecovered, date
     )
 }
