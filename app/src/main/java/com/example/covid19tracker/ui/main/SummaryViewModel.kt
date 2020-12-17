@@ -14,7 +14,6 @@ class SummaryViewModel (
     private val state: SavedStateHandle
 ): ViewModel() {
 
-//    val countriesListInfo = summaryRepository.countriesInfoList
     val globalInfo = summaryRepository.globalInfo
 
     private val _navigateToCountryDetail = MutableLiveData<Country>(null)
