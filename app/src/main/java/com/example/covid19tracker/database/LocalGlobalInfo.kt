@@ -7,8 +7,8 @@ import com.example.covid19tracker.network.models.WebGlobalInfo
 
 @Entity(tableName = "global_info")
 data class LocalGlobalInfo (
-    @PrimaryKey(autoGenerate = true)
-    val id: Int = 0,
+    @PrimaryKey
+    val id: Int = 1,
     val newConfirmed: Int,
     val totalConfirmed: Int,
     val newDeaths: Int,
